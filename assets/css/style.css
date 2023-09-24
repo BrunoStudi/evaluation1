@@ -1,0 +1,195 @@
+/********************CODE PAR BRUNO CARRIERE***********************/
+
+
+/*Déclaration des polices d'écritures, noms et chemins d'acces*/
+@font-face {
+    font-family: "Celtica";
+    src: url("../polices/Celtica-Book.ttf");
+}
+
+ @font-face {
+    font-family: "Holidays";
+    src: url("../polices/Holidays Homework.ttf");
+}
+
+/*initialisation du navigateur pas de marges interieures et exterieures, pas de style de liste et pas de deco 
+liens hypertext et curseur par defaut lors du survol d'un lien*/
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    cursor: default;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*méthode grille pour un site responsive*/
+.container-grille {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 1fr 500px; /*1fr occupe l'espace restant de l'ecran d'affichage*/
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    grid-column: span 3; /*occupe 3 espaces*/
+    padding: 30px;
+    text-align: center;
+    font-family: 'Holidays';
+    font-size: 48px;
+    background-color: rgb(0, 90, 225);
+    color: #fff;
+}
+
+/*logo de la page*/
+img {
+    width: 65px;
+    margin-right: 10px;
+}
+
+/*1er mot du titre en oblique*/
+.titreEver {
+    font-style: oblique;
+}
+
+nav {
+    background-color: rgba(0, 134, 9, 1);
+}
+
+/*barre de navigation*/
+.liste-sidenav {
+    max-height: 650px;
+    display: flex;
+    flex-direction: column;
+}
+
+.liste-sidenav li {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.liste-sidenav li a {
+    font-size: 18px;
+    color: #f1f1f1;
+    font-family: 'Celtica';
+}
+
+/*image de fond uniquement sur le block MAIN*/
+main {
+    padding: 20px;
+    background-image: url("../pictures/fond2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    margin-top: 40px;
+    color: white;
+    font-family: 'Holidays';
+}
+
+.slogan {
+    margin: 300px 0 15px 0;
+    width: 60%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/*bloc info sur la droite du site*/
+aside {
+    padding: 20px;
+    background-color: grey;
+    font-size: 42px;
+    font-family: 'Holidays';
+    background-image: url("../pictures/baleine.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+aside p {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.asideText {
+    font-size: 16px;
+    margin-top: 120px;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*texte d'invitation a l'evenement*/
+.asideDownText {
+    margin-top: 200px;
+    color: yellowgreen;
+    font-size: 22px;
+}
+
+/*bouton de l'evenement*/
+.plusInfo {
+    height: 25px;
+    width: 90px;
+    cursor: pointer;
+}
+
+footer {
+    grid-column: span 3; /*prend 3 espacements*/
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #2e282a;
+    color: #fff;
+}
+
+/*pour les ecran inferieur à 500 pixels (smartphones)*/
+@media screen and (max-width: 500px) {
+
+    .container-grille {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .liste-sidenav {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .liste-sidenav li {
+        margin: 0 10px;
+        border-style: hidden; /*masque les bottom border du menu de navigation lorsque l'affichage passe en flex lignes*/
+    }
+    main p {
+        min-height: 800px;
+    }
+    aside p {
+        height: auto;
+    }
+
+    .liste-sidenav li a {
+        font-size: 15px;
+    }
+}
+
+/*pour les ecran au dessus de 1024 pixels*/
+@media screen and (min-width: 1024px) {
+    .container-grille {
+        height: 100vh; /*regle un soucis d'affichage sur les ecran a partir de 1024 pixels dont le height etait aux ~800 pixels*/
+    }
+}
